@@ -22,22 +22,27 @@ async function getVersions() {
 </script>
 
 <template>
-  <div class="versions-container">
-    <version-info :logo="chromiumLogo" alt="Chromium version">
-      Chromium version: {{ versions.chromium }}
-    </version-info>
-    <version-info :logo="electronLogo" alt="Electron version">
-      Electron version: {{ versions.electron }}
-    </version-info>
-    <version-info :logo="nodejsLogo" alt="Node JS version">
-      Node JS version: {{ versions.nodejs }}
-    </version-info>
+  <div id="versions-page" class="d-flex justify-center align-center flex-column" style="gap: 50px; margin-top: 10px;">
+    <div class="d-flex" style="gap: 5px;">
+      <version-info :logo="chromiumLogo" alt="Chromium version">
+        Chromium version: {{ versions.chromium }}
+      </version-info>
+      <version-info :logo="electronLogo" alt="Electron version">
+        Electron version: {{ versions.electron }}
+      </version-info>
+      <version-info :logo="nodejsLogo" alt="Node JS version">
+        Node JS version: {{ versions.nodejs }}
+      </version-info>
+    </div>
+  
+    <div class="d-flex flex-column align-center" style="gap: 5px;">
+      <v-btn color="info" @click="getVersions">Get versions</v-btn>
+      <v-btn color="success" @click="count++">
+        Local count (clicked {{ count }} times)
+      </v-btn>
+      <v-btn color="success" @click="store.incrementGlobalCount">
+        Increment global count
+      </v-btn>
+    </div>
   </div>
-  <button class="black-button" @click="getVersions">Get versions</button>
-  <button class="cyan-button" @click="count++">
-    Local count (clicked {{ count }} times)
-  </button>
-  <button class="cyan-button" @click="store.incrementGlobalCount">
-    Increment global count
-  </button>
 </template>

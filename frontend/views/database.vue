@@ -49,54 +49,50 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div id="database-page">
-    <h5 style="text-align: center;">Database file located in $HOME/$APP_NAME/file</h5>
-    <div style="display: flex; gap: 10px">
-      <button class="cyan-button" @click="store.incrementGlobalCount">
+  <div id="database-page" class="d-flex flex-column align-center" style="gap: 20px;">
+    <h5 style="text-align: center; margin-top: 10px">
+      Database file located in $HOME/$APP_NAME/file
+    </h5>
+    <div style="display: flex; gap: 10px; justify-content: center">
+      <v-btn color="success" @click="store.incrementGlobalCount">
         Increment global count
-      </button>
-      <button class="cyan-button" @click="count++">
+      </v-btn>
+      <v-btn color="success" @click="count++">
         Local count (clicked {{ count }} times)
-      </button>
+      </v-btn>
     </div>
 
-    <div class="task-input-container">
-      <input
-        class="task-input"
-        type="text"
-        placeholder="Type here..."
-        v-model="newTask"
-        @keyup.enter="addTask"
-      />
-      <button class="black-button" @click="addTask">Add</button>
-    </div>
-
-    <div class="task-list">
-      <div class="task-item" v-for="task in tasks" :key="task.id">
-        <button class="btn-delete-task" @click="deleteTask(task.id)">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
+    <v-card width="450" title="Database demo Todo List">
+      <v-card-text>
+        <div>
+          <v-text-field
+            variant="solo-filled"
+            density="compact"
+            @keyup.enter="addTask"
+            v-model="newTask"
+            placeholder="Type here..."
+            autofocus
           >
-            <path
-              fill="currentColor"
-              d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
-            />
-          </svg>
-        </button>
-        <div class="task-description">{{ task.description }}</div>
-        <button
-          :class="[
-            'btn-toggle-task',
-            task.completed ? 'btn-toggle-task__completed' : '',
-          ]"
-          @click="toggleTask(task.id, task.completed)"
-        >
-          &check;
-        </button>
-      </div>
-    </div>
+          <template #append>
+            <v-btn @click="addTask" color="info">Add</v-btn>
+          </template>
+        </v-text-field>
+        </div>
+
+        <v-list>
+          <v-list-item v-for="task in tasks" :key="task.id">
+            <template #prepend>
+              <v-btn @click="deleteTask(task.id)" size="small" color="error" icon="mdi-delete"></v-btn>
+            </template>
+            
+            <div class="pl-2">{{ task.description }}</div>
+
+            <template #append>
+              <v-btn @click="toggleTask(task.id, task.completed)" size="small" :color="task.completed ? 'success' : 'grey'" icon="mdi-check"></v-btn>
+            </template>
+          </v-list-item>
+        </v-list>
+      </v-card-text>
+    </v-card>
   </div>
 </template>

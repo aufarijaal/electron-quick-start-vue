@@ -26,31 +26,30 @@ async function getDependencies() {
       flex-direction: column;
       align-items: center;
       gap: 10px;
+      margin-top: 10px;
     "
   >
-    <button class="cyan-button" @click="store.incrementGlobalCount">
+    <v-btn color="info" @click="store.incrementGlobalCount">
       Increment global count
-    </button>
-    <button class="cyan-button" @click="count++">
+    </v-btn>
+    <v-btn color="info" @click="count++">
       Local count (clicked {{ count }} times)
-    </button>
-    <button class="black-button" @click="async () => await getDependencies()">
+    </v-btn>
+    <v-btn color="success" @click="async () => await getDependencies()">
       Show dependencies
-    </button>
+    </v-btn>
 
     <div style="display: flex; gap: 10px">
-      <div class="dependency-list">
-        <div>Dependencies</div>
-        <ul v-for="(dependency, index) in dependencies" :key="index">
-          <li>{{ dependency }}</li>
-        </ul>
-      </div>
-      <div class="dependency-list">
-        <div>Dev Dependencies</div>
-        <ul v-for="(dependency, index) in devDependencies" :key="index">
-          <li>{{ dependency }}</li>
-        </ul>
-      </div>
+      <v-card title="Dependencies">
+        <v-list density="compact">
+          <v-list-item v-for="dependency in dependencies" :key="dependency">{{ dependency }}</v-list-item>
+        </v-list>
+      </v-card>
+      <v-card title="Dev Dependencies">
+        <v-list density="compact">
+          <v-list-item v-for="dependency in devDependencies" :key="dependency">{{ dependency }}</v-list-item>
+        </v-list>
+      </v-card>
     </div>
   </div>
 </template>
