@@ -11,9 +11,9 @@ const store = useMainStore();
     "
   >
     <div>
-      <h1>Electron Quick Start Vue</h1>
-      <h4 style="text-align: center">Global count: {{ store.globalCount }}</h4>
-      <h5 style="text-align: center">Variant: Vanilla Vue. No UI Library.</h5>
+      <div class="va-h2">Electron Quick Start Vue</div>
+      <div class="va-h6" style="text-align: center">Global count: {{ store.globalCount }}</div>
+      <div class="va-h6" style="text-align: center">Variant: Vuestic UI</div>
     </div>
     <div class="router-link-container">
       <router-link

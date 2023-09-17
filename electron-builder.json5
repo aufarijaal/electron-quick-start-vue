@@ -3,9 +3,9 @@
  */
 {
   $schema: "https://raw.githubusercontent.com/electron-userland/electron-builder/master/packages/app-builder-lib/scheme.json",
-  appId: "com.aufarijaal.electron_quick_start_vue_vanilla",
+  appId: "com.aufarijaal.electron_quick_start_vue_vuestic",
   asar: true,
-  productName: "ElectronQuickStartVueVanilla",
+  productName: "ElectronQuickStartVueVuestic",
   directories: {
     output: "release/${version}",
   },

@@ -47,38 +47,6 @@
   font-size: 0.9rem;
   text-align: center;
 }
-.cyan-button {
-  appearance: none;
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: hsl(195, 80%, 63%);
-  transition: background-color 100ms linear;
-  color: white;
-}
-.cyan-button:hover {
-  background-color: hsl(195, 80%, 53%);
-}
-.black-button {
-  appearance: none;
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: black;
-  transition: background-color 100ms linear;
-  color: white;
-}
-.black-button:hover {
-  background-color: hsl(0, 0, 20);
-}
-.dependency-list {
-  background-color: hsl(195, 100%, 92%);
-  padding: 10px;
-}
 .task-list {
   display: flex;
   flex-direction: column;
@@ -90,41 +58,8 @@
   justify-content: space-between;
   align-items: center;
 }
-.btn-delete-task {
-  color: white;
-  appearance: none;
-  border: none;
-  background-color: red;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-.btn-toggle-task {
-  color: white;
-  appearance: none;
-  border: none;
-  background-color: lightgray;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.btn-toggle-task__completed {
-  color: white;
-  appearance: none;
-  border: none;
-  background-color: green;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
 .task-input-container {
   display: flex;
   align-items: center;
   gap: 10px;
-}
-.task-input {
-  height: 30px;
-  margin: 10px 0;
-  width: 100%;
 }

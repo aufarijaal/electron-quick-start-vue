@@ -28,29 +28,33 @@ async function getDependencies() {
       gap: 10px;
     "
   >
-    <button class="cyan-button" @click="store.incrementGlobalCount">
+    <va-button @click="store.incrementGlobalCount">
       Increment global count
-    </button>
-    <button class="cyan-button" @click="count++">
+    </va-button>
+    <va-button @click="count++">
       Local count (clicked {{ count }} times)
-    </button>
-    <button class="black-button" @click="async () => await getDependencies()">
+    </va-button>
+    <va-button preset="primary" @click="async () => await getDependencies()">
       Show dependencies
-    </button>
+    </va-button>
 
-    <div style="display: flex; gap: 10px">
-      <div class="dependency-list">
-        <div>Dependencies</div>
-        <ul v-for="(dependency, index) in dependencies" :key="index">
-          <li>{{ dependency }}</li>
-        </ul>
-      </div>
-      <div class="dependency-list">
-        <div>Dev Dependencies</div>
-        <ul v-for="(dependency, index) in devDependencies" :key="index">
-          <li>{{ dependency }}</li>
-        </ul>
-      </div>
+    <div style="display: flex; gap: 10px" v-if="dependencies && devDependencies">
+      <va-card>
+        <va-card-title>Dependencies</va-card-title>
+        <va-card-content>
+          <ul v-for="(dependency, index) in dependencies" :key="index">
+            <li>{{ dependency }}</li>
+          </ul>
+        </va-card-content>
+      </va-card>
+      <va-card>
+        <va-card-title>Dev Dependencies</va-card-title>
+        <va-card-content>
+          <ul v-for="(dependency, index) in devDependencies" :key="index">
+            <li>{{ dependency }}</li>
+          </ul>
+        </va-card-content>
+      </va-card>
     </div>
   </div>
 </template>

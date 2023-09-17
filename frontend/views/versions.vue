@@ -33,11 +33,11 @@ async function getVersions() {
       Node JS version: {{ versions.nodejs }}
     </version-info>
   </div>
-  <button class="black-button" @click="getVersions">Get versions</button>
-  <button class="cyan-button" @click="count++">
+  <va-button preset="primary" @click="getVersions">Get versions</va-button>
+  <va-button @click="count++">
     Local count (clicked {{ count }} times)
-  </button>
-  <button class="cyan-button" @click="store.incrementGlobalCount">
+  </va-button>
+  <va-button @click="store.incrementGlobalCount">
     Increment global count
-  </button>
+  </va-button>
 </template>
