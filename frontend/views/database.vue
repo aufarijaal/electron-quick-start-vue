@@ -52,28 +52,28 @@ onMounted(async () => {
   <div id="database-page">
     <h5 style="text-align: center;">Database file located in $HOME/$APP_NAME/file</h5>
     <div style="display: flex; gap: 10px">
-      <button class="cyan-button" @click="store.incrementGlobalCount">
+      <el-button plain type="primary" @click="store.incrementGlobalCount">
         Increment global count
-      </button>
-      <button class="cyan-button" @click="count++">
+      </el-button>
+      <el-button plain type="primary" @click="count++">
         Local count (clicked {{ count }} times)
-      </button>
+      </el-button>
     </div>
 
     <div class="task-input-container">
-      <input
+      <el-input
         class="task-input"
         type="text"
         placeholder="Type here..."
         v-model="newTask"
         @keyup.enter="addTask"
       />
-      <button class="black-button" @click="addTask">Add</button>
+      <el-button plain type="success" @click="addTask">Add</el-button>
     </div>
 
     <div class="task-list">
-      <div class="task-item" v-for="task in tasks" :key="task.id">
-        <button class="btn-delete-task" @click="deleteTask(task.id)">
+      <div style="display: flex; align-items: center;" v-for="task in tasks" :key="task.id">
+        <el-button @click="deleteTask(task.id)" circle size="large" plain type="danger">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
@@ -85,17 +85,14 @@ onMounted(async () => {
               d="M6 19c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2V7H6v12zM19 4h-3.5l-1-1h-5l-1 1H5v2h14V4z"
             />
           </svg>
-        </button>
-        <div class="task-description">{{ task.description }}</div>
-        <button
-          :class="[
-            'btn-toggle-task',
-            task.completed ? 'btn-toggle-task__completed' : '',
-          ]"
+        </el-button>
+        <div style="flex-grow: 1; padding-left: 5px; padding-right: 5px;" class="task-description">{{ task.description }}</div>
+        <el-button
           @click="toggleTask(task.id, task.completed)"
+          circle plain size="large" :type="task.completed ? 'success': 'default'"
         >
           &check;
-        </button>
+        </el-button>
       </div>
     </div>
   </div>

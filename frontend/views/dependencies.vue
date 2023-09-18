@@ -28,29 +28,33 @@ async function getDependencies() {
       gap: 10px;
     "
   >
-    <button class="cyan-button" @click="store.incrementGlobalCount">
+    <el-button plain type="primary" @click="store.incrementGlobalCount">
       Increment global count
-    </button>
-    <button class="cyan-button" @click="count++">
+    </el-button>
+    <el-button plain type="primary" @click="count++">
       Local count (clicked {{ count }} times)
-    </button>
-    <button class="black-button" @click="async () => await getDependencies()">
+    </el-button>
+    <el-button plain type="success" @click="async () => await getDependencies()">
       Show dependencies
-    </button>
+    </el-button>
 
     <div style="display: flex; gap: 10px">
-      <div class="dependency-list">
-        <div>Dependencies</div>
+      <el-card class="dependency-list">
+        <template #header>
+          <div>Dependencies</div>
+        </template>
         <ul v-for="(dependency, index) in dependencies" :key="index">
           <li>{{ dependency }}</li>
         </ul>
-      </div>
-      <div class="dependency-list">
-        <div>Dev Dependencies</div>
+      </el-card>
+      <el-card class="dependency-list">
+        <template #header>
+          <div>Dev Dependencies</div>
+        </template>
         <ul v-for="(dependency, index) in devDependencies" :key="index">
           <li>{{ dependency }}</li>
         </ul>
-      </div>
+      </el-card>
     </div>
   </div>
 </template>

@@ -7,6 +7,7 @@ import { notBundle } from "vite-plugin-electron/plugin";
 import pkg from "./package.json";
 import AutoImport from "unplugin-auto-import/vite";
 import Components from "unplugin-vue-components/vite";
+import {ElementPlusResolver} from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ command }) => {
@@ -25,13 +26,16 @@ export default defineConfig(({ command }) => {
           "pinia",
           {
             "/frontend/store": ["useMainStore"],
-            "/frontend/utils": ["backendCall"]
+            "/frontend/utils": ["backendCall"],
+            "@vueuse/core": ["useDark", "useToggle"]
           }
-        ]
+        ],
+        resolvers: [ElementPlusResolver()]
       }),
       Components({
         dts: true,
-        dirs: ["frontend/components"]
+        dirs: ["frontend/components"],
+        resolvers: [ElementPlusResolver()]
       }),
       vue(),
       electron([

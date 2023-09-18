@@ -1,6 +1,6 @@
 # Electron Quick Start
 
-<img src="previews/Preview Vanilla.gif">
+<img src="previews/Preview Element Plus.gif">
 
 ## Features
 
@@ -22,6 +22,7 @@ You can choose the UI library (or completely plain) by choosing from the branche
 - Vanilla (Not using any UI library)
 - Vuestic UI
 - Vuetify 3 (has dark mode support)
+- Element Plus (has dark mode support)
 
 ## Architecture
 

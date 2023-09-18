@@ -13,23 +13,6 @@
   width: 90%;
   height: 40px;
 }
-.router-link {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  color: black;
-  background-color: hsl(195, 100%, 92%);
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-.router-link:hover {
-  background-color: hsl(195, 100%, 82%);
-}
-.router-link-active {
-  border-bottom: 4px solid hsl(195, 80%, 63%);
-}
 .versions-container {
   display: flex;
 }
@@ -47,76 +30,10 @@
   font-size: 0.9rem;
   text-align: center;
 }
-.cyan-button {
-  appearance: none;
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: hsl(195, 80%, 63%);
-  transition: background-color 100ms linear;
-  color: white;
-}
-.cyan-button:hover {
-  background-color: hsl(195, 80%, 53%);
-}
-.black-button {
-  appearance: none;
-  border: none;
-  border-radius: 5px;
-  height: 30px;
-  font-weight: 600;
-  cursor: pointer;
-  background-color: black;
-  transition: background-color 100ms linear;
-  color: white;
-}
-.black-button:hover {
-  background-color: hsl(0, 0, 20);
-}
-.dependency-list {
-  background-color: hsl(195, 100%, 92%);
-  padding: 10px;
-}
 .task-list {
   display: flex;
   flex-direction: column;
   gap: 5px;
-}
-.task-item {
-  display: flex;
-  background-color: hsl(195, 100%, 92%);
-  justify-content: space-between;
-  align-items: center;
-}
-.btn-delete-task {
-  color: white;
-  appearance: none;
-  border: none;
-  background-color: red;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-.btn-toggle-task {
-  color: white;
-  appearance: none;
-  border: none;
-  background-color: lightgray;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-}
-
-.btn-toggle-task__completed {
-  color: white;
-  appearance: none;
-  border: none;
-  background-color: green;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
 }
 .task-input-container {
   display: flex;
